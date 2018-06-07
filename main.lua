@@ -5,10 +5,10 @@ RIGHT_X = 3
 RIGHT_Y = 4
 
 -- Drawing parameters
-margin = 40
+margin = 10
 text_padding_top = 20
 block_width = 400
-block_height = 300
+block_height = 460
 axis_radius = 30
 joy_reach = axis_radius * 0.8
 axis_point_radius = 5
@@ -23,7 +23,7 @@ function love.load()
     state_right = 0
   }
   if joysticks and #joysticks ~= 0 then
-    love.window.setMode(800, 600 * #joysticks)
+    love.window.setMode(block_width * #joysticks, 600)
   end
 end
 
@@ -36,7 +36,7 @@ function love.draw()
     for i, j in ipairs(joysticks) do
       --[[ Axii ]]
       local x = block_width * (i-1) + margin
-      local y = block_height * (i-1) + margin
+      local y = margin
 
       local lx = j:getAxis(LEFT_X)
       local ly = j:getAxis(LEFT_Y)
