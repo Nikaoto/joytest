@@ -24,6 +24,7 @@ function love.load()
   }
   if joysticks and #joysticks ~= 0 then
     love.window.setMode(block_width * #joysticks, 600)
+    love.window.setTitle("joytest")
   end
 end
 
